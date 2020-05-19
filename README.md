@@ -1,24 +1,48 @@
-# README
+## tags_usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| tag    | references | null: false                    |
 
-Things you may want to cover:
+### Association
+- belongs_to :tag
+- belongs_to :user
 
-* Ruby version
+## usersテーブル
 
-* System dependencies
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| name     | string |             |
+| email    | string | null: false |
+| password | string | null: false |
 
-* Configuration
+### Association
+- has_many :tags, through: :tags_users
+- has_many :tags_users
+- has_many :profiles
 
-* Database creation
+## profilesテーブル
 
-* Database initialization
+| Column       | Type       | Options                      |
+| ------------ | ---------- | ---------------------------- |
+| Introduction | text       |                              |
+| image        | string     |                              |
+| tag          | references | null:false                   |
+| user         | references | null:false, foregin_key:true |
 
-* How to run the test suite
+### Association
+- belongs_to :tag
+- belongs_to :user
 
-* Services (job queues, cache servers, search engines, etc.)
+## tagsテーブル
 
-* Deployment instructions
+| Column | Type       | Options    |
+| ------ | ---------- | ---------- |
+| name   | string     | null:false |
+| user   | references | null:false |
 
-* ...
+### Association
+- has_many :tags_users
+- has_many :users, through: :tags_users
+- has_many :profiles
