@@ -10,9 +10,11 @@
     %header.header
       .inner.cf
         .ttl_h
-          %span.logo
-            You_know
+          %span
+            = link_to root_path(current_user), class:'logo' do
+              You_know
         %ul
           %li= link_to 'login', "#", class: "login" 
           %li= link_to 'logout', "#", class: "logout"
+          
     = yield
