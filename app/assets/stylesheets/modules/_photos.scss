@@ -23,8 +23,31 @@ a {
 $c_white:#fff;
 $c_green:#03c9a9;
 
+$side_blue_dark: #253141;
+$side_blue_light: #2f3e51;
+$light_blue: #38AEF0;
+$light_gray: #999;
+$black: #434a54;
+$alert_orange: #F35500;
+
 .wrap {
   background: #fdfdfd;
+}
+
+/* flash */
+
+.notification {
+  .notice {
+    background-color: $light_blue;
+    color: $c_white;
+    text-align: center;
+  }
+
+  .alert {
+    background-color: $alert_orange;
+    color: $c_white;
+    text-align: center;
+  }
 }
 
 /* ------------------------------ >>
