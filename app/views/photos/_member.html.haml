@@ -6,7 +6,7 @@
           = image_tag("sample_img.jpg", alt: "写真")
       .right_box
         %p.name
-          山田やまお
+          = current_user.name
         %p.area
           東京都
     %li
@@ -216,14 +216,14 @@
 .box_btn
   %ul
     %li.btn_style
-      = link_to "#" do
-        %span
+      %span
+        = link_to edit_user_path(current_user) do
           自己紹介登録・編集
     %li.btn_style
-      = link_to "#" do
-        %span
-          メンバー詳細検索
+      %span
+        = link_to edit_user_path(current_user) do
+          メンバー詳細
     %li.btn_style
-      = link_to "#" do
-        %span
-          閲覧した履歴
+      %span
+        = link_to edit_user_path(current_user) do
+          検索閲覧した履歴

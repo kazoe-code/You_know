@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'photos/index'
 
   root "photos#index"
+  resources :users, only: [:edit, :update]
 end
