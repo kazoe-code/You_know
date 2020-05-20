@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 16px;
+    font-size: 1.6rem;
+}
+/* ------------------------------ >>
+  common
+ <<------------------------------ */
+
+ .cf::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+a {
+  text-decoration: none;
+}
+$c_white:#fff;
+$c_green:#03c9a9;
+
+.wrap {
+  background: #fdfdfd;
+}
+
+/* ------------------------------ >>
+  component
+ <<------------------------------ */
+
+.box_btn {
+  background: #eee;
+  padding: 25px 0;
+
+  ul {
+    width: 960px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .btn_style {
+    display: inline-block;
+    & + .btn_style {
+      margin-left: 20px;
+    }
+
+    a {
+      color: $c_white;
+      background: $c_green;
+    }
+  }
+
+}
+.btn_style a {
+  display: block;
+  min-width: 300px;
+  height: 50px;
+  line-height: 50px;
+  box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.contents_box {
+  width: 960px;
+  margin: 0 auto;
+  padding: 25px 0 0 0;
+}
+/* ------------------------------ >>
+  header
+ <<------------------------------ */
+.header {
+    background: #112844;
+    padding: 10px;
+
+  .inner {
+    width: 960px;
+    margin: 0 auto;
+    padding: 0 10px;
+
+    .ttl_h { 
+      float: left;
+
+    }
+
+    .logo {
+      color: $c_white;
+      display: block;
+    }
+
+    ul {
+      float:right;
+
+        li {
+          display: inline-block;
+
+        }
+        .login,
+        .logout{
+          color: $c_white;
+        }
+    }
+  }
+}
+
+ /* ------------------------------ >>
+  footer
+ <<------------------------------ */
+.footer {
+    background: #112844;
+    color: $c_white;
+    text-align: center;
+    padding: 5px;
+}
+/* ------------------------------ >>
+  contents
+ <<------------------------------ */
+  .member_list_wrap {
+    text-align: center;
+    display: table;
+    width: 100%;
+
+
+    li {
+      width: 300px;
+      display: inline-block;
+      padding: 15px;
+      border: 1px solid #ccc;
+      margin: 0 25px 25px 0;
+      box-shadow: 1px 1px 5px 0 #eee;
+ 
+      .left_box {
+        display: table-cell;
+        vertical-align: top;
+        
+      img {
+        width: 150ox;
+        height: 150px;
+        border-radius: 100%;
+      }
+    }
+      .right_box {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: left;
+        padding-left: 10px;
+
+        .name {
+          margin-bottom: 5px;
+        }
+        .area {
+          font-size: 1.3rem;
+        }
+        .area:before {
+          content:"拠点";
+          font-size:1rem;
+        }
+      }
+    }
+    
+    li:nth-child(3n+1){
+      margin-left: 0;
+    }
+    li:nth-child(3n){
+      margin-right: 0;
+    }
+    
+  }
