@@ -7,6 +7,7 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    = render 'layouts/notifications'
     %header.header
       .inner.cf
         .ttl_h
@@ -15,6 +16,6 @@
               You_know
         %ul
           %li= link_to 'login', "#", class: "login" 
-          %li= link_to 'logout', "#", class: "logout"
+          %li= link_to "logout", destroy_user_session_path, method: :delete, class: 'logout'
           
     = yield
