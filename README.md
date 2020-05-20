@@ -1,4 +1,4 @@
-## tags_usersテーブル
+## tag_usersテーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
@@ -18,8 +18,8 @@
 | password | string | null: false |
 
 ### Association
-- has_many :tags, through: :tags_users
-- has_many :tags_users
+- has_many :tags, through: :tag_users
+- has_many :tag_users
 - has_many :profiles
 
 ## profilesテーブル
@@ -43,6 +43,6 @@
 | user   | references | null:false |
 
 ### Association
-- has_many :tags_users
-- has_many :users, through: :tags_users
+- has_many :tag_users
+- has_many :users, through: :tag_users
 - has_many :profiles
