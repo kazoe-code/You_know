@@ -17,20 +17,57 @@ body {
   display: block;
   clear: both;
 }
-
-$c_white:#fff;
-
-
 a {
   text-decoration: none;
 }
+$c_white:#fff;
+$c_green:#03c9a9;
 
+.wrap {
+  background: #fdfdfd;
+}
 
- /* ------------------------------ >>
-  adjust
+/* ------------------------------ >>
+  component
  <<------------------------------ */
 
+.box_btn {
+  background: #eee;
+  padding: 25px 0;
 
+  ul {
+    width: 960px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .btn_style {
+    display: inline-block;
+    & + .btn_style {
+      margin-left: 20px;
+    }
+
+    a {
+      color: $c_white;
+      background: $c_green;
+    }
+  }
+
+}
+.btn_style a {
+  display: block;
+  min-width: 300px;
+  height: 50px;
+  line-height: 50px;
+  box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.contents_box {
+  width: 960px;
+  margin: 0 auto;
+  padding: 25px 0 0 0;
+}
 /* ------------------------------ >>
   header
  <<------------------------------ */
@@ -41,6 +78,7 @@ a {
   .inner {
     width: 960px;
     margin: 0 auto;
+    padding: 0 10px;
 
     .ttl_h { 
       float: left;
@@ -59,8 +97,8 @@ a {
           display: inline-block;
 
         }
-        .login a,
-        .logout a{
+        .login,
+        .logout{
           color: $c_white;
         }
     }
@@ -70,32 +108,29 @@ a {
  /* ------------------------------ >>
   footer
  <<------------------------------ */
-
-
+.footer {
+    background: #112844;
+    color: $c_white;
+    text-align: center;
+    padding: 5px;
+}
 /* ------------------------------ >>
   contents
  <<------------------------------ */
-.contents_box {
-  width: 960px;
-  margin: 0 auto;
-  padding: 25px 0;
-
   .member_list_wrap {
     text-align: center;
     display: table;
     width: 100%;
 
+
     li {
+      width: 300px;
       display: inline-block;
       padding: 15px;
-      /*width: calc(960px/5.5);*/
       border: 1px solid #ccc;
-      margin: 0 20px 20px 0;
-
-      + li {
-        margin-left: 10px;
-      }
-
+      margin: 0 25px 25px 0;
+      box-shadow: 1px 1px 5px 0 #eee;
+ 
       .left_box {
         display: table-cell;
         vertical-align: top;
@@ -124,5 +159,12 @@ a {
         }
       }
     }
+    
+    li:nth-child(3n+1){
+      margin-left: 0;
+    }
+    li:nth-child(3n){
+      margin-right: 0;
+    }
+    
   }
-}
