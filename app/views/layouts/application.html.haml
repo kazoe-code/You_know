@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title YouKnow
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    = render 'layouts/notifications'
+    %header.header
+      .inner.cf
+        .ttl_h
+          %span
+            = link_to root_path(current_user), class:'logo' do
+              You_know
+        %ul
+          %li= link_to 'login', "#", class: "login" 
+          %li= link_to "logout", destroy_user_session_path, method: :delete, class: 'logout'
+          
+    = yield

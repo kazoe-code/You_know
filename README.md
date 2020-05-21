@@ -1,17 +1,3 @@
-<<<<<<< Updated upstream
-## tags_usersテーブル
-
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| tag    | references | null: false                    |
-
-### Association
-- belongs_to :tag
-- belongs_to :user
-
-=======
->>>>>>> Stashed changes
 ## usersテーブル
 
 | Column   | Type   | Options     |
@@ -21,37 +7,30 @@
 | password | string | null: false |
 
 ### Association
-<<<<<<< Updated upstream
-- has_many :tags, through: :tags_users
-- has_many :tags_users
-- has_many :profiles
-=======
 - has_many :skill, through: :slill_users
 - has_many :personal, through: :personal_users
 
 ## skillsテーブル
 
-| Column  | Type       | Options    |
-| ------- | ---------- | ---------- |
-| user_id | references | null:false |
-| name    | string     | null:false |
+| Column | Type   | Options    |
+| ------ | ------ | ---------- |
+| skill  | string | null:false |
 
 ### Association
 - has_many :personal, through: :personal_users
 
 ## personalsテーブル
 
-| Column   | Type       | Options                      |
-| -------- | ---------- | ---------------------------- |
-| user_id  | references | null:false, foregin_key:true |
-| post     | text       |                              |
-| image    | string     |                              |
-| personal | references | null:false                   |
+| Column       | Type       | Options                      |
+| ------------ | ---------- | ---------------------------- |
+| Introduction | text       |                              |
+| image        | string     |                              |
+| personal     | references | null:false                   |
+| user_id      | references | null:false, foregin_key:true |
 
 ### Association
 - has_many :skill, through: :slill_users
 
->>>>>>> Stashed changes
 
 ## skill_usersテーブル
 
@@ -72,11 +51,5 @@
 | personal | references | null: false                    |
 
 ### Association
-<<<<<<< Updated upstream
-- has_many :tags_users
-- has_many :users, through: :tags_users
-- has_many :profiles
-=======
 - belongs_to :personal
 - belongs_to :user
->>>>>>> Stashed changes
