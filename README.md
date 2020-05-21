@@ -1,14 +1,3 @@
-## tag_usersテーブル
-
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| tag    | references | null: false                    |
-
-### Association
-- belongs_to :tag
-- belongs_to :user
-
 ## usersテーブル
 
 | Column   | Type   | Options     |
@@ -18,31 +7,49 @@
 | password | string | null: false |
 
 ### Association
-- has_many :tags, through: :tag_users
-- has_many :tag_users
-- has_many :profiles
+- has_many :skill, through: :slill_users
+- has_many :personal, through: :personal_users
 
-## profilesテーブル
+## skillsテーブル
+
+| Column | Type   | Options    |
+| ------ | ------ | ---------- |
+| skill  | string | null:false |
+
+### Association
+- has_many :personal, through: :personal_users
+
+## personalsテーブル
 
 | Column       | Type       | Options                      |
 | ------------ | ---------- | ---------------------------- |
 | Introduction | text       |                              |
 | image        | string     |                              |
-| tag          | references | null:false                   |
-| user         | references | null:false, foregin_key:true |
+| personal     | references | null:false                   |
+| user_id      | references | null:false, foregin_key:true |
 
 ### Association
-- belongs_to :tag
+- has_many :skill, through: :slill_users
+
+
+## skill_usersテーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| skill  | references | null: false                    |
+
+### Association
+- belongs_to :skill
 - belongs_to :user
 
-## tagsテーブル
+## personal_usersテーブル
 
-| Column | Type       | Options    |
-| ------ | ---------- | ---------- |
-| name   | string     | null:false |
-| user   | references | null:false |
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| user     | references | null: false, foreign_key: true |
+| personal | references | null: false                    |
 
 ### Association
-- has_many :tag_users
-- has_many :users, through: :tag_users
-- has_many :profiles
+- belongs_to :personal
+- belongs_to :user
