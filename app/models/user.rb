@@ -7,7 +7,7 @@ class User < ApplicationRecord
   #validates :name, presence: true, uniqueness: true
 
   has_many :tag_users
-  has_many :tags, through: :tag_users
+  has_many :tags, through: :tag_users, dependent: :destroy
   
   #has_many :profiles
   
