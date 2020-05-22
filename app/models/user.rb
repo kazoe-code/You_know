@@ -6,8 +6,8 @@ class User < ApplicationRecord
 
   #validates :name, presence: true, uniqueness: true
 
-  has_many :tag_users
-  has_many :tags, through: :tag_users, dependent: :destroy
+  has_many :skill, through: :slill_users
+  has_many :personal, through: :personal_users
   
   #has_many :profiles
   
