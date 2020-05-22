@@ -5,10 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   #validates :name, presence: true, uniqueness: true
+  
+  has_many :skill_users
+  has_many :skills, through: :skill_users
 
-  has_many :skill, through: :slill_users
-  has_many :personal, through: :personal_users
-  
-  #has_many :profiles
-  
+  has_many :personal_users
+  has_many :personals, through: :personal_users
+    
 end
