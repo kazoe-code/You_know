@@ -1,3 +1,3 @@
 class Personal < ApplicationRecord
-  has_many :skill, through: :slill_users
+  has_many :skills, through: :slill_users
 end

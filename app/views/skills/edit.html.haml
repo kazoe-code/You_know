@@ -1,0 +1,18 @@
+%dl
+  %dt
+    登録している名前
+    %dd
+      = current_user.name
+
+
+%h5 スキルの登録
+.account-page__inner--right.user-form
+  = form_for(current_user) do |f|
+    .field
+      .field-label
+        = f.check_box :skills, {class: 'cb',id: 'user_skill_01'}
+        = f.label :skill_01, "HTML", class: 'skill_cb'
+        = f.check_box :skills, {class: 'cb',id: 'user_skill_02'}
+        = f.label :skill_02, "css", class: 'skill_cb'
+    .actions
+      = f.submit "Update", class: 'btn'

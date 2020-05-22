@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   root "photos#index"
   resources :users, only: [:edit, :update]
-  resources :profiles
+  resources :skills, only: [:show, :new, :create, :edit]
 end
